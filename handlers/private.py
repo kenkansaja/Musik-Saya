@@ -1,13 +1,12 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER
+from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN
 from helpers.filters import other_filters2, other_filters
 
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await message.reply_sticker("CAACAgUAAxkBAAEKORJguwR4VsN1PCqbNh82LgABstqGU2EAAjMCAAK8hthX2HwTiIOxnxofBA")
     await message.reply_text(
         f"""hai 👋, saya dapat memutar lagu di voice chat group anda.
 
@@ -19,7 +18,7 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 PANDUAN", url = "https://telegra.ph/%E1%B4%8B%E1%B4%80%C9%AA%EA%9C%B1%E1%B4%80%CA%80-%EF%BC%B4%EF%BC%B5%EF%BC%B0%EF%BC%A1%EF%BC%A9-07-20")
+                        "📚 PANDUAN", url = f"{PANDUAN}")
                   ],[
                     InlineKeyboardButton(
                         "💬 Group Support", url=f"https://t.me/{GROUP}"
