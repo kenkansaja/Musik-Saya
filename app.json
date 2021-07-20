@@ -47,10 +47,6 @@
       "description": "Isi dengan username kalian tanpa tanda @",
       "value": ""
     },
-    "UPDATE_SUB": {
-      "description": "Isi dengan id group/channel kalian",
-      "value": ""
-    },
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
