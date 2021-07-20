@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER
-from helpers.filters import other_filters2, other_filters
+from helpers.filters import other_filters2
 
 
 @Client.on_message(other_filters2)
@@ -53,7 +53,7 @@ async def gstart(_, message: Message):
               )
          )
          
-@Client.on_message(filters.command("help") & other_filters)
+@Client.on_message(filters.command("help") & filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
       f"""
