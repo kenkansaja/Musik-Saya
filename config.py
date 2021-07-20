@@ -16,6 +16,7 @@ OWNER = getenv("OWNER")
 GROUP = getenv("GROUP")
 CHANNEL = getenv("CHANNEL")
 OWNER = getenv("OWNER")
+PANDUAN = getenv("PANDUAN")
 
 
 
