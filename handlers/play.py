@@ -86,7 +86,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 memproses lagu...")
+    lel = await message.reply("🔄 **memproses lagu...**")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
@@ -169,7 +169,7 @@ async def play(_, message: Message):
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
     else:
-        await lel.edit("🔎 menemukan lagu...")
+        await lel.edit("🔎 **Menemukan lagu...**")
         sender_id = message.from_user.id
         user_id = message.from_user.id
         sender_name = message.from_user.first_name
@@ -180,7 +180,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += ' ' + str(i)
         print(query)
-        await lel.edit("🎵 memutar lagu...")
+        await lel.edit("🎵 **Memutar lagu...**")
         ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -219,7 +219,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ lagu yang anda minta **mengantri** di posisi {position}!",
+        caption=f"#⃣ lagu yang anda minta **Mengantri** di posisi {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
