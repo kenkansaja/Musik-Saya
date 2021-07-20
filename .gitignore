@@ -1,6 +1,5 @@
 *.session
 *.session-journal
-.env
 __pycache__
 .idea
 .vscode
