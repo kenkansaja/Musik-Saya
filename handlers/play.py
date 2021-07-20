@@ -87,7 +87,8 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 
-@Client.on_message(command("play") & handle_force_sub & other_filters)
+@Client.on_message(command("play") & other_filters)
+@handle_force_sub
 async def play(_, message: Message):
 
     lel = await message.reply("🔄 memproses lagu...")
