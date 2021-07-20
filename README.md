@@ -24,13 +24,13 @@ HANYA BISA MEMUTAR LAGU LEWAT YOUTUBE DAN SONG
 - [X] /e : Menghentikan pemutaran media 
 - [X] /hp : Untuk menampilkan daftar bantuan di gc
 
-Semua Perintah Bisa Digunakan Kecuali Perintah /pr /sk /ps /rs /e Hanya Untuk Admin Grup
+Semua Perintah Bisa Digunakan Kecuali Perintah /sk /ps /rs /e Hanya Untuk Admin Grup
 
-### 💜 HEROKU
+# 💜 HEROKU
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/kenkansaja/Musik-Saya"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
 
-## VIA REPLIT
+# VIA REPLIT
 Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 
 <p align="center"><a href="https://replit.com/@kenkannih/strings-session#main.py"><img src="https://img.shields.io/badge/REPLIT-STRINGS-yellow?style=plastic&logo=replit&logoColor=yellow"width="270" height="40" /></a></p>
