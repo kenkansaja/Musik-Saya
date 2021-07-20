@@ -52,7 +52,7 @@ async def gstart(_, message: Message):
               )
          )
 
-@Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
       f"""
