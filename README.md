@@ -35,6 +35,14 @@ Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 
 <p align="center"><a href="https://replit.com/@kenkannih/strings-session#main.py"><img src="https://img.shields.io/badge/REPLIT-STRINGS-yellow?style=plastic&logo=replit&logoColor=yellow"width="270" height="40" /></a></p>
 
+### Atau Bisa Gabung Ke Grup Support
+
+<p align="center">
+<a href="https://t.me/musikkugroup"><img src="https://img.shields.io/badge/SUPPORT-GROUP-yellow?style=plastic&logo=Telegram&logoColor=yellow"/></a>
+<a href="https://t.me/musikkuchannel"><img src="https://img.shields.io/badge/SUPPORT-CHANNEL-magenta?style=plastic&logo=Telegram&logoColor=yellow"/></a>
+<a href="https://t.me/kenkanasw"><img src="https://img.shields.io/badge/OWNER-KENKAN-blue?style=plastic&logo=Telegram&logoColor=yellow"/></a>
+</p>
+
 <p align="center">
 <a href="https://github.com/kenkansaja/Musik-Saya/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kenkansaja/Musik-Saya?color=purple&label=LICENSE&logo=github&logoColor=gold&style=plastic"width="150" height="30"/>
 </a>
