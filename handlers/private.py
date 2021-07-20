@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER
-from helpers.filters import other_filters2
+from helpers.filters import other_filters2, other_filters
 
 
 @Client.on_message(other_filters2)
