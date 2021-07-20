@@ -31,7 +31,7 @@ Semua Perintah Bisa Digunakan Kecuali Perintah /sk /ps /rs /e Hanya Untuk Admin 
 
 # 💜 HEROKU
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/kenkansaja/Musik-Saya"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-blue?style=plastic&logo=heroku&logoColor=yellow"width="300"heigh="100" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/kenkansaja/Musik-Saya"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-aqua?style=plastic&logo=heroku&logoColor=aqua"width="300"heigh="100" /></a></p>
 
 # VIA REPLIT
 Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
