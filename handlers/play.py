@@ -15,7 +15,10 @@ from youtube_search import YoutubeSearch
 import converter
 from downloaders import youtube
 
-from config import BOT_NAME as bn, DURATION_LIMIT, GROUP, CHANNEL
+from config import BOT_NAME as bn
+from config import DURATION_LIMIT
+from config import GROUP as group
+from config import CHANNEL as channel
 from helpers.filters import command, other_filters
 from helpers.decorators import errors
 from helpers.errors import DurationLimitError
@@ -29,7 +32,6 @@ import ffmpeg
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
-
 
 
 def transcode(filename):
@@ -83,22 +85,22 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 
-@Client.on_message(command("play") & other_filters)
+@Client.on_message(command("p") & other_filters)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **memproses lagu...**")
+    lel = await message.reply("🔄 **Memproses lagu...**")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
     keyboard = InlineKeyboardMarkup(
-                        [
                             [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{CHANNEL}")
-                            ],[
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
+                                [
+                                    InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
+                                ],[
+                                    InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
+                                ]
                             ]
-                        ]
-                    )
+                        )
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
     url = get_url(message)
 
@@ -110,19 +112,19 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/35ccc7e75582dcadd5b2f.png"
+        thumb_name = "https://telegra.ph/file/1f2f83c244832967f28f5.png"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "locally added"
         keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{CHANNEL}")
-                            ],[
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
-                            ]
-                        ]
-                    )
+                                [
+                                    [
+                                        InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
+                                    ],[
+                                        InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
+                                    ]
+                                ]
+                            )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(
@@ -143,28 +145,28 @@ async def play(_, message: Message):
             url_suffix = results[0]["url_suffix"]
             views = results[0]["views"]
             keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{CHANNEL}")
-                            ],[
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
-                            ]
-                        ]
-                    )
+                                    [
+                                        [
+                                            InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
+                                        ],[
+                                            InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
+                                        ]
+                                    ]
+                                )
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://telegra.ph/file/35ccc7e75582dcadd5b2f.png"
+            thumb_name = "https://telegra.ph/file/1f2f83c244832967f28f5.png"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{CHANNEL}")
-                            ],[
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
-                            ]
-                        ]
-                    )
+                                    [
+                                        [
+                                            InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
+                                        ],[
+                                            InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
+                                        ]
+                                    ]
+                                )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
@@ -203,14 +205,14 @@ async def play(_, message: Message):
             return
 
         keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{CHANNEL}")
-                            ],[
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
-                            ]
-                        ]
-                    )
+                                [
+                                    [
+                                        InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
+                                    ],[
+                                        InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
+                                    ]
+                                ]
+                            )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(youtube.download(url))
@@ -219,7 +221,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ lagu yang anda minta **Mengantri** di posisi {position}!",
+        caption=f"#⃣ lagu yang anda minta **mengantri** di posisi {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
