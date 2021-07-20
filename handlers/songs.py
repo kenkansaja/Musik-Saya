@@ -14,7 +14,7 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.command('so') & ~filters.private & ~filters.channel)
 def song(client, message):
-await AddUserToDatabase(bot, event)
+    await AddUserToDatabase(bot, event)
     FSub = await ForceSub(bot, event)
     if FSub == 400:
         return
