@@ -3,7 +3,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER
 from helpers.filters import other_filters2, other_filters
-from handlers.msg import HELP_MSG
+
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
@@ -19,7 +19,7 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 PANDUAN", callback_data = "_help")
+                        "📚 PANDUAN", url = "https://telegra.ph/%E1%B4%8B%E1%B4%80%C9%AA%EA%9C%B1%E1%B4%80%CA%80-%EF%BC%B4%EF%BC%B5%EF%BC%B0%EF%BC%A1%EF%BC%A9-07-20")
                   ],[
                     InlineKeyboardButton(
                         "💬 Group Support", url=f"https://t.me/{GROUP}"
@@ -76,13 +76,3 @@ Semua Perintah Bisa Digunakan Kecuali Perintah /player /skip /pause /resume  /en
                 ]
         )
     )        
-@Client.on_message(filters.private & filters.incoming & filters.command(['help']))
-def _help(client, message):
-    client.send_message(chat_id = message.chat.id,
-        text = tr.HELP_MSG,
-        parse_mode="markdown",
-        disable_web_page_preview=True,
-        reply_to_message_id = message.message_id
-    )
-
-help_callback_filter = filters.create(lambda _, __, query: query.data.startswith('help'))
