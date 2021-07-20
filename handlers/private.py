@@ -82,9 +82,7 @@ def _help(client, message):
         text = tr.HELP_MSG,
         parse_mode="markdown",
         disable_web_page_preview=True,
-        disable_notification=True,
-        reply_markup = InlineKeyboardMarkup(map(1)),
         reply_to_message_id = message.message_id
     )
 
-help_callback_filter = filters.create(lambda _, __, query: query.data.startswith('help+'))
+help_callback_filter = filters.create(lambda _, __, query: query.data.startswith('help'))
