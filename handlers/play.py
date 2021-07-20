@@ -98,7 +98,7 @@ async def play(_, message: Message):
                                 InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
                             ]
                         ]
-                    ),
+                    )
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
     url = get_url(message)
 
@@ -122,7 +122,7 @@ async def play(_, message: Message):
                                 InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
                             ]
                         ]
-                    ),
+                    )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(
@@ -150,7 +150,7 @@ async def play(_, message: Message):
                                 InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
                             ]
                         ]
-                    ),
+                    )
         except Exception as e:
             title = "NaN"
             thumb_name = "https://telegra.ph/file/35ccc7e75582dcadd5b2f.png"
@@ -164,7 +164,7 @@ async def play(_, message: Message):
                                 InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
                             ]
                         ]
-                    ),
+                    )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
@@ -210,7 +210,7 @@ async def play(_, message: Message):
                                 InlineKeyboardButton("GROUP 👥", url=f"t.me/{GROUP}")                                
                             ]
                         ]
-                    ),
+                    )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(youtube.download(url))
