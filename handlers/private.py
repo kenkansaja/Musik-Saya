@@ -58,14 +58,14 @@ async def ghelp(_, message: Message):
       f"""
 **🔰 Perintah**
       
-• /play (nama lagu) - Untuk Memutar lagu yang Anda minta melalui youtube
-• /song [nama lagu]: Unduh audio lagu dari youtube
-• /skip: Melewati trek saat ini
-• /pause: Jeda trek
-• /resume: Melanjutkan trek yang dijeda
-• /end: Menghentikan pemutaran media
+• /p (nama lagu) : Untuk Memutar lagu yang Anda minta melalui youtube
+• /so [nama lagu] : Unduh audio lagu dari youtube
+• /sk : Melewati trek saat ini
+• /ps : Jeda trek
+• /rs : Melanjutkan trek yang dijeda
+• /e : Menghentikan pemutaran media
       
-Semua Perintah Bisa Digunakan Kecuali Perintah /player /skip /pause /resume  /end Hanya Untuk Admin Grup
+Semua Perintah Bisa Digunakan Kecuali Perintah /sk /ps /rs  /e Hanya Untuk Admin Grup
 """,
       reply_markup=InlineKeyboardMarkup(
                   [
