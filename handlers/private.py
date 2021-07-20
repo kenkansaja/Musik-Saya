@@ -3,10 +3,14 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN, BOT_NAME
 from helpers.filters import other_filters2, other_filters
-
+from helpers.forcesub import ForceSub
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
+    await AddUserToDatabase(bot, event)
+    FSub = await ForceSub(bot, event)
+    if FSub == 400:
+        return
     await message.reply_text(
         f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
 
@@ -37,6 +41,10 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & other_filters)
 async def gstart(_, message: Message):
+await AddUserToDatabase(bot, event)
+    FSub = await ForceSub(bot, event)
+    if FSub == 400:
+        return
       await message.reply_text("""**✅ Saya telah online**""",
       reply_markup=InlineKeyboardMarkup(
                   [
