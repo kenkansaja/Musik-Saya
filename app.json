@@ -19,7 +19,7 @@
       "required": false,
       "value": ""
     },
-    "ASISSTANT": {
+    "ASSISTANT": {
       "description": "Isi dengan username assistant kalian tanpa tanda @",
       "value": ""
     },
