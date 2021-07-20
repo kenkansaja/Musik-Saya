@@ -1,14 +1,14 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN
+from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN, BOT_NAME
 from helpers.filters import other_filters2, other_filters
 
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
     await message.reply_text(
-        f"""hai 👋, saya dapat memutar lagu di voice chat group anda.
+        f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
 
 ➠ Tekan tombol panduan menggunakan bot di bawah jika ingin mengetahui bagaimana cara menggunakan saya.
 
