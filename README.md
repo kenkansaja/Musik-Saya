@@ -1,6 +1,5 @@
 
 <p align="center">
-<img src="/etc/tg_vc_bot.png"/>
 <img src="https://2.bp.blogspot.com/-eBu3-f3vzW0/V3E8UnYXsfI/AAAAAAAADHI/lJrPAoLSE70aO0F3W9fruZ8O-qJY76MSwCLcB/s1600/gambar-gerak-gif-chip-and-dale-terbaru.gif" style="width:100%"></p>
 <p align="center">
   <a href="https://github.com/kenkansaja/Musik-Saya/fork">
@@ -14,6 +13,7 @@
   
 # 🎼 MUSIK SAYA
 
+<p align="center"><img src="/etc/tg_vc_bot.png"/></p>
 
 HANYA BISA MEMUTAR LAGU LEWAT YOUTUBE DAN SONG
 
