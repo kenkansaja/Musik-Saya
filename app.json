@@ -47,6 +47,10 @@
       "description": "Isi dengan username kalian tanpa tanda @",
       "value": ""
     },
+    "PANDUAN": {
+      "description": "Isi dengan fitur bot dalam format text yang kamu upload di telegra.ph",
+      "value": ""
+    },
     "DURATION_LIMIT": {
       "description": "Max audio duration limit for downloads (minutes).",
       "required": true,
