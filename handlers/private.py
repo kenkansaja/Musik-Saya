@@ -3,7 +3,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER
 from helpers.filters import other_filters2, other_filters
-
+from handlers.msg import HELP_MSG
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
