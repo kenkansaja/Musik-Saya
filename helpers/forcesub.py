@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 async def ForceSub(bot: Client, event: Message):
   """
   Anda harus bergabung dengan channel atau group kami dulu bos.
-  """
+  """,
     try:
         invite_link = await bot.create_chat_invite_link(chat_id=(int(config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
     except FloodWait as e:
