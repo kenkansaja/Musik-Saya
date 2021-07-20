@@ -46,7 +46,7 @@ Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 # CREDIT
 
 * [JOKO KENDI](https://github.com/jokokendi/jokokendi)
-* [JOKO KENDI](https://github.com/kenkansaja/kenkansaja)
+* [KEN KAN](https://github.com/kenkansaja/kenkansaja)
 
 <p align="center">
 <a href="https://github.com/kenkansaja/Musik-Saya/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kenkansaja/Musik-Saya?color=purple&label=LICENSE&logo=github&logoColor=gold&style=plastic"width="150" height="30"/>
