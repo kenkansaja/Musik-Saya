@@ -2,7 +2,7 @@
   "name": "Musik-Saya",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
-  "logo": "https://telegra.ph/file/bc46914ce71dca2f82195.jpg",
+  "logo": "https://telegra.ph/file/ed136c19e7f6afddb4912.jpg",
   "repository": "https://github.com/kenkansaja/Musik-Saya",
   "stack": "container",
   "env": {
