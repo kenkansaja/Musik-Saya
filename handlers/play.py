@@ -87,7 +87,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 
-@Client.on_message(command("play") & other_filters)
+@Client.on_message(command("play") & handle_force_sub & other_filters)
 async def play(_, message: Message):
 
     lel = await message.reply("🔄 memproses lagu...")
@@ -95,14 +95,12 @@ async def play(_, message: Message):
     sender_name = message.from_user.first_name
 
     keyboard = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("👥 OWNER", url="t.me/kenkanasw"),
-                    InlineKeyboardButton("💬 GROUP", url=f"https://t.me/{GROUP}"),
-                ],
-                [InlineKeyboardButton("💌 CHANNEL", url=f"https://t.me/{CHANNEL}")],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-            ]
+      [
+        [
+          ("📣 CHANNEL", url=f"t.me/{CHANNEL}"),
+          ("GROUP 👥", url=f"t.me/{GROUP}")
+          ]
+        ]
         )
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
     url = get_url(message)
@@ -120,14 +118,12 @@ async def play(_, message: Message):
         duration = round(audio.duration / 60)
         views = "locally added"
         keyboard = InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("👥 OWNER", url="t.me/kenkanasw"),
-                            InlineKeyboardButton("💬 GROUP", url=f"https://t.me/{GROUP}"),
-                        ],
-                        [InlineKeyboardButton("💌 CHANNEL", url=f"https://t.me/{CHANNEL}")],
-                        [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-                    ]
+              [
+                [
+                  ("📣 CHANNEL", url=f"t.me/{CHANNEL}"),
+                  ("GROUP 👥", url=f"t.me/{GROUP}")
+                  ]
+                ]
                 )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
@@ -149,14 +145,12 @@ async def play(_, message: Message):
             url_suffix = results[0]["url_suffix"]
             views = results[0]["views"]
             keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("👥 OWNER", url="t.me/kenkanasw"),
-                                InlineKeyboardButton("💬 GROUP", url=f"https://t.me/{GROUP}"),
-                            ],
-                            [InlineKeyboardButton("💌 CHANNEL", url=f"https://t.me/{CHANNEL}")],
-                            [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-                        ]
+                  [
+                    [
+                      ("📣 CHANNEL", url=f"t.me/{CHANNEL}"),
+                      ("GROUP 👥", url=f"t.me/{GROUP}")
+                      ]
+                    ]
                     )
         except Exception as e:
             title = "NaN"
@@ -164,14 +158,12 @@ async def play(_, message: Message):
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton("👥 OWNER", url="t.me/kenkanasw"),
-                                InlineKeyboardButton("💬 GROUP", url=f"https://t.me/{GROUP}"),
-                            ],
-                            [InlineKeyboardButton("💌 CHANNEL", url=f"https://t.me/{CHANNEL}")],
-                            [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-                        ]
+                  [
+                    [
+                      ("📣 CHANNEL", url=f"t.me/{CHANNEL}"),
+                      ("GROUP 👥", url=f"t.me/{GROUP}")
+                      ]
+                    ]
                     )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
@@ -211,14 +203,12 @@ async def play(_, message: Message):
             return
 
         keyboard = InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("👥 OWNER", url="t.me/kenkanasw"),
-                            InlineKeyboardButton("💬 GROUP", url=f"https://t.me/{GROUP}"),
-                        ],
-                        [InlineKeyboardButton("💌 CHANNEL", url=f"https://t.me/{CHANNEL}")],
-                        [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-                    ]
+              [
+                [
+                  ("📣 CHANNEL", url=f"t.me/{CHANNEL}"),
+                  ("GROUP 👥", url=f"t.me/{GROUP}")
+                  ]
+                ]
                 )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
