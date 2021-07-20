@@ -4,6 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message, Voice
 
 from callsmusic import callsmusic, queues
+from helpers.forcesub import ForceSub
 
 from os import path
 import requests
@@ -88,7 +89,10 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 @Client.on_message(command("p") & other_filters)
 async def play(_, message: Message):
-
+await AddUserToDatabase(bot, event)
+    FSub = await ForceSub(bot, event)
+    if FSub == 400:
+        return
     lel = await message.reply("🔄 **Memproses lagu...**")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
