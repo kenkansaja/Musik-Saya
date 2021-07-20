@@ -23,13 +23,13 @@ ASSISTANT = getenv("ASSISTANT")
 
 OWNER = getenv("OWNER")
 
-GROUP = getenv("GROUP")
+GROUP = getenv("GROUP", "musikkugroup")
 
-CHANNEL = getenv("CHANNEL")
+CHANNEL = getenv("CHANNEL", "musikkuchannel")
 
-OWNER = getenv("OWNER")
+OWNER = getenv("OWNER", "kenkanasw")
 
-PANDUAN = getenv("PANDUAN")
+PANDUAN = getenv("PANDUAN", "https://telegra.ph/Panduan-07-20")
 
 
 
