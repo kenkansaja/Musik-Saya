@@ -15,17 +15,12 @@ from youtube_search import YoutubeSearch
 import converter
 from downloaders import youtube
 
-from config import BOT_NAME as bn, DURATION_LIMIT, CHANNEL, GROUP
+from config import BOT_NAME as bn, DURATION_LIMIT, GROUP, CHANNEL
 from helpers.filters import command, other_filters
-
+from helpers.decorators import errors
 from helpers.errors import DurationLimitError
 from helpers.gets import get_url, get_file_name
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
-from pyrogram.errors import UserNotParticipant
-from pyrogram.errors import FloodWait
-
-
 
 import os
 import aiohttp
@@ -34,6 +29,7 @@ import ffmpeg
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
+
 
 
 def transcode(filename):
