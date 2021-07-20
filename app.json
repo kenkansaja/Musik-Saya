@@ -23,6 +23,10 @@
       "description": "Isi dengan username assistant kalian tanpa tanda @",
       "value": ""
     },
+    "UPDATES_CHANNEL": {
+      "description": "Isi dengan id channel atau group yang akan di jadikan forcesub",
+      "value": ""
+    },
     "API_ID": {
       "description": "App ID from my.telegram.org/apps",
       "required": true
