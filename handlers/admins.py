@@ -9,7 +9,7 @@ from helpers.filters import command, other_filters
 from helpers.decorators import errors, authorized_users_only
 
 
-@Client.on_message(command("pause") & other_filters)
+@Client.on_message(command("ps") & other_filters)
 @errors
 @authorized_users_only
 async def pause(_, message: Message):
@@ -24,7 +24,7 @@ async def pause(_, message: Message):
         await message.reply_text("▶️ paused!")
 
 
-@Client.on_message(command("resume") & other_filters)
+@Client.on_message(command("rs") & other_filters)
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
@@ -39,7 +39,7 @@ async def resume(_, message: Message):
         await message.reply_text("⏸ resumed!")
 
 
-@Client.on_message(command("end") & other_filters)
+@Client.on_message(command("e") & other_filters)
 @errors
 @authorized_users_only
 async def stop(_, message: Message):
@@ -55,7 +55,7 @@ async def stop(_, message: Message):
         await message.reply_text("⏹ musik berhenti!")
 
 
-@Client.on_message(command("skip") & other_filters)
+@Client.on_message(command("sk") & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
