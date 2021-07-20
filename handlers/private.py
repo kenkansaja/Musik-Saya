@@ -38,7 +38,7 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & other_filters)
 async def gstart(_, message: Message):
-      await message.reply_text("""**✅ ava music player is online**""",
+      await message.reply_text("""**✅ Saya telah online**""",
       reply_markup=InlineKeyboardMarkup(
                   [
                       [
@@ -52,8 +52,8 @@ async def gstart(_, message: Message):
                   ]
               )
          )
-         
-@Client.on_message(filters.command("help") & filters.channel)
+
+@Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
       f"""
