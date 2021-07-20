@@ -1,11 +1,11 @@
 <p align="center"><img src="https://2.bp.blogspot.com/-eBu3-f3vzW0/V3E8UnYXsfI/AAAAAAAADHI/lJrPAoLSE70aO0F3W9fruZ8O-qJY76MSwCLcB/s1600/gambar-gerak-gif-chip-and-dale-terbaru.gif" style="width:100%"></p>
 <p align="center">
   <a href="https://github.com/kenkansaja/Musik-Saya/fork">
-    <img src="https://img.shields.io/github/forks/kenkansaja/Musik-Saya?label=FORK&style=plastic&logo=github&logoColor=pink"widht="50" height="30">
+    <img src="https://img.shields.io/github/forks/kenkansaja/Musik-Saya?label=FORK&style=plastic&logo=github&logoColor=yellow"widht="50" height="30">
     
   </a>
   <a href="https://github.com/kenkansaja/Musik-Saya">
-    <img src="https://img.shields.io/github/stars/kenkansaja/Musik-Saya?label=STARS&style=plastic&logo=github&logoColor=pink"widht="50" height="30">
+    <img src="https://img.shields.io/github/stars/kenkansaja/Musik-Saya?label=STARS&style=plastic&logo=github&logoColor=yellow"widht="50" height="30">
   </a>
 </p>
   
