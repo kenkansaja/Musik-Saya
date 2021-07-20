@@ -22,14 +22,14 @@ async def start(_, message: Message):
                         "📚 PANDUAN", callback_data="help")
                   ],[
                     InlineKeyboardButton(
-                        "💬 Group Support", url="https://t.me/{GROUP}"
+                        "💬 Group Support", url=f"https://t.me/{GROUP}"
                     ),
                     InlineKeyboardButton(
-                        "🔊 Channel Support", url="https://t.me/{CHANNEL}"
+                        "🔊 Channel Support", url=f"https://t.me/{CHANNEL}"
                     )
                 ],[ 
                     InlineKeyboardButton(
-                        "🎁 Kirim Donasi", url="https://t.me/{OWNER}"
+                        "🎁 Kirim Donasi", url=f"https://t.me/{OWNER}"
                     )]
             ]
         ),
