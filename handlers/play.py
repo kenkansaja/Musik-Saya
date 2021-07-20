@@ -24,7 +24,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from pyrogram.errors import UserNotParticipant
 from pyrogram.errors import FloodWait
-from helpers.fsub import handle_force_sub
+
 
 
 import os
@@ -87,7 +87,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 
 
-@Client.on_message(command("play") & other_filters & handle_force_sub)
+@Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
 
     lel = await message.reply("🔄 memproses lagu...")
