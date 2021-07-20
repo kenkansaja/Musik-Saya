@@ -19,6 +19,7 @@ from config import BOT_NAME as bn
 from config import DURATION_LIMIT
 from config import GROUP as group
 from config import CHANNEL as channel
+from config import OWNER as kenkan
 from helpers.filters import command, other_filters
 from helpers.decorators import errors
 from helpers.errors import DurationLimitError
@@ -93,14 +94,15 @@ async def play(_, message: Message):
     sender_name = message.from_user.first_name
 
     keyboard = InlineKeyboardMarkup(
+                        [
                             [
-                                [
-                                    InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
-                                ],[
-                                    InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
-                                ]
+                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                            ],[
+                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
                             ]
-                        )
+                        ]
+                    )
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
     url = get_url(message)
 
@@ -117,14 +119,15 @@ async def play(_, message: Message):
         duration = round(audio.duration / 60)
         views = "locally added"
         keyboard = InlineKeyboardMarkup(
-                                [
-                                    [
-                                        InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
-                                    ],[
-                                        InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
-                                    ]
-                                ]
-                            )
+                        [
+                            [
+                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                            ],[
+                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                            ]
+                        ]
+                    )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(
@@ -145,28 +148,30 @@ async def play(_, message: Message):
             url_suffix = results[0]["url_suffix"]
             views = results[0]["views"]
             keyboard = InlineKeyboardMarkup(
-                                    [
-                                        [
-                                            InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
-                                        ],[
-                                            InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
-                                        ]
-                                    ]
-                                )
+                        [
+                            [
+                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                            ],[
+                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                            ]
+                        ]
+                    )
         except Exception as e:
             title = "NaN"
             thumb_name = "https://telegra.ph/file/1f2f83c244832967f28f5.png"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
-                                    [
-                                        [
-                                            InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
-                                        ],[
-                                            InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
-                                        ]
-                                    ]
-                                )
+                        [
+                            [
+                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                            ],[
+                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                            ]
+                        ]
+                    )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
@@ -205,14 +210,15 @@ async def play(_, message: Message):
             return
 
         keyboard = InlineKeyboardMarkup(
-                                [
-                                    [
-                                        InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}")
-                                    ],[
-                                        InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")                                
-                                    ]
-                                ]
-                            )
+                        [
+                            [
+                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                            ],[
+                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                            ]
+                        ]
+                    )
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(youtube.download(url))
