@@ -19,7 +19,7 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 PANDUAN", text=f"{HELP_MSG}")
+                        "📚 PANDUAN", callback_data = f"help+1")
                   ],[
                     InlineKeyboardButton(
                         "💬 Group Support", url=f"https://t.me/{GROUP}"
