@@ -7,7 +7,6 @@ from helpers.forcesub import ForceSub
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await AddUserToDatabase(client, event)
     FSub = await ForceSub(client, event)
     if FSub == 400:
         return
@@ -41,7 +40,6 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & other_filters)
 async def gstart(_, message: Message):
-    await AddUserToDatabase(client, event)
     FSub = await ForceSub(client, event)
     if FSub == 400:
         return
@@ -62,6 +60,9 @@ async def gstart(_, message: Message):
 
 @Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
+    FSub = await ForceSub(client, event)
+    if FSub == 400:
+        return
     await message.reply_text(
       f"""
 **🔰 Perintah**
