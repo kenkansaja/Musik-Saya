@@ -9,10 +9,12 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 
 async def ForceSub(client: Client, event: Message):
-  """
-  Anda harus bergabung dengan channel atau group kami dulu bos.
-  """
-
+    """
+    Anda harus bergabung dengan channel atau group kami dulu bos
+    :param bot: Pass Client.
+    :param event: Pass Message.
+    :return: It will return 200 if Successfully Got User in Force Sub Channel and 400 if Found that User Not Participant in Force Sub Channel or User is Kicked from Force Sub Channel it will return 400. Also it returns 200 if Unable to Find Channel.
+    """
 
     try:
         invite_link = await client.create_chat_invite_link(chat_id=(int(config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
