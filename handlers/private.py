@@ -52,11 +52,8 @@ async def gstart(_, message: Message):
               )
          )
 
-@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel)
+@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel & ForceSub)
 async def ghelp(_, message: Message):
-    FSub = await ForceSub(client, event)
-    if FSub == 400:
-        return
     await message.reply_text(
       f"""
 **🔰 Perintah**
