@@ -3,9 +3,9 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN, BOT_NAME
 from helpers.filters import other_filters2, other_filters
-from helpers.forcesub import ForceSub
+from helpers.forcesub import force_sub
 
-@Client.on_message(other_filters2 & ForceSub)
+@Client.on_message(other_filters2 & force_sub)
 async def start(_, message: Message):
     await message.reply_text(
         f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
@@ -18,7 +18,7 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "📚 PANDUAN", url = f"{PANDUAN}")
+                        "📚 Panduan Penggunaan", url = f"{PANDUAN}")
                   ],[
                     InlineKeyboardButton(
                         "💬 Group Support", url=f"https://t.me/{GROUP}"
