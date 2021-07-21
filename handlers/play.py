@@ -89,7 +89,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 @Client.on_message(command("p") & other_filters)
 async def play(_, message: Message):
-    FSub = await ForceSub(client, event)
+    FSub = await ForceSub(client: Client, event: Message)
     if FSub == 400:
         return
     lel = await message.reply("🔄 **Memproses lagu...**")
@@ -230,7 +230,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption=f"#⃣ lagu yang anda minta **mengantri** di posisi {position}!",
+        caption=f"#⃣ lagu yang anda minta **Mengantri di posisi** {position}!",
         reply_markup=keyboard)
         os.remove("final.png")
         return await lel.delete()
