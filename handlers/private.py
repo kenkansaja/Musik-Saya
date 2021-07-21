@@ -7,7 +7,7 @@ from helpers.forcesub import ForceSub
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    FSub = await ForceSub(client, event)
+    FSub = await ForceSub(client: Client, event: Message)
     if FSub == 400:
         return
     await message.reply_text(
