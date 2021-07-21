@@ -8,7 +8,7 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 
-async def ForceSub(client: Client, event: Message):
+async def force_sub(client: Client, event: Message):
     """
     Anda harus bergabung dengan channel atau group kami dulu bos
     :param bot: Pass Client.
