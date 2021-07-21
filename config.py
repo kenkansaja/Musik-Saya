@@ -33,4 +33,3 @@ PANDUAN = getenv("PANDUAN", "https://telegra.ph/Panduan-07-20")
 
 UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", None)
   
-BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/35ccc7e75582dcadd5b2f.png")
