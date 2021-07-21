@@ -89,8 +89,8 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
 
 @Client.on_message(command("p") & other_filters)
 async def play(_, message: Message):
-    await AddUserToDatabase(bot, event)
-    FSub = await ForceSub(bot, event)
+    await AddUserToDatabase(client, event)
+    FSub = await ForceSub(client, event)
     if FSub == 400:
         return
     lel = await message.reply("🔄 **Memproses lagu...**")
