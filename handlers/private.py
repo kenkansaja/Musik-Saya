@@ -35,7 +35,7 @@ async def start(_, message: Message):
      disable_web_page_preview=True
     )
 
-@Client.on_message(filters.command("start") & other_filters & ForceSub)
+@Client.on_message(filters.command("start") & other_filters & force_sub)
 async def gstart(_, message: Message):
     await message.reply_text("""**✅ Saya telah online**""",
       reply_markup=InlineKeyboardMarkup(
@@ -52,7 +52,7 @@ async def gstart(_, message: Message):
               )
          )
 
-@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel & ForceSub)
+@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel & force_sub)
 async def ghelp(_, message: Message):
     await message.reply_text(
       f"""
