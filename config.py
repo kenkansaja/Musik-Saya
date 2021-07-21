@@ -31,8 +31,6 @@ OWNER = getenv("OWNER", "kenkanasw")
 
 PANDUAN = getenv("PANDUAN", "https://telegra.ph/Panduan-07-20")
 
-
-class Config:
-        UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", None)
+UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", None)
   
 
