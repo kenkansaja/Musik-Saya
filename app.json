@@ -19,6 +19,11 @@
       "required": false,
       "value": ""
     },
+    "BG_IMAGE": {
+      "description": "Custom Background Play Musik Gunakan Foto yang Transparant format .png / .jpg",
+      "required": false,
+      "value": "https://telegra.ph/file/aafce7ef46a06e70f08b8.png"
+    },        
     "ASSISTANT": {
       "description": "Isi dengan username assistant kalian tanpa tanda @",
       "value": ""
