@@ -8,23 +8,25 @@ from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 
-async def ForceSub(bot: Client, event: Message):
+async def ForceSub(client: Client, event: Message):
   """
   Anda harus bergabung dengan channel atau group kami dulu bos.
-  """,
+  """
+
+
     try:
-        invite_link = await bot.create_chat_invite_link(chat_id=(int(config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
+        invite_link = await client.create_chat_invite_link(chat_id=(int(config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_ = await ForceSub(bot, event)
+        fix_ = await ForceSub(client, event)
         return fix_
     except Exception as err:
         print(f"Tidak dapat melakukan Paksa Berlangganan ke {Config.UPDATES_CHANNEL}\n\nKesalahan: {err}\n\nHubungi Grup Dukungan: https://t.me/{group}")
         return 200
     try:
-        user = await bot.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=event.from_user.id)
+        user = await client.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=event.from_user.id)
         if user.status == "kicked":
-            await bot.send_message(
+            await client.send_message(
                 chat_id=event.from_user.id,
                 text=f"Maaf, Anda dilarang menggunakan saya. Hubungi [Grup Dukungan](https://t.me/{group}) saya.",
                 parse_mode="markdown",
@@ -35,7 +37,7 @@ async def ForceSub(bot: Client, event: Message):
         else:
             return 200
     except UserNotParticipant:
-        await bot.send_message(
+        await client.send_message(
             chat_id=event.from_user.id,
             text="**Silakan Bergabunglah dengan Saluran Pembaruan Saya untuk menggunakan Bot ini!**\n\nKarena Kelebihan Beban, Hanya Pelanggan Saluran yang dapat menggunakan Bot!",
             reply_markup=InlineKeyboardMarkup(
@@ -51,7 +53,7 @@ async def ForceSub(bot: Client, event: Message):
         return 400
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_ = await ForceSub(bot, event)
+        fix_ = await ForceSub(client, event)
         return fix_
     except Exception as err:
         print(f"Ada yang Salah! Tidak dapat melakukan Langganan Paksa.\nKesalahan: {err}\n\nHubungi Grup Dukungan: https://t.me/{group}")
