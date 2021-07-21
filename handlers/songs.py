@@ -14,11 +14,10 @@ def time_to_seconds(time):
 
 @Client.on_message(filters.command('so') & ~filters.private & ~filters.channel)
 def song(client, message):
-    await AddUserToDatabase(bot, event)
-    FSub = await ForceSub(bot, event)
+    await AddUserToDatabase(client, event)
+    FSub = await ForceSub(client, event)
     if FSub == 400:
         return
-
     user_id = message.from_user.id 
     user_name = message.from_user.first_name 
     rpk = "["+user_name+"](tg://user?id="+str(user_id)+")"
