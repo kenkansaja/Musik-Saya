@@ -7,8 +7,8 @@ from helpers.forcesub import ForceSub
 
 @Client.on_message(other_filters2)
 async def start(_, message: Message):
-    await AddUserToDatabase(bot, event)
-    FSub = await ForceSub(bot, event)
+    await AddUserToDatabase(client, event)
+    FSub = await ForceSub(client, event)
     if FSub == 400:
         return
     await message.reply_text(
@@ -41,8 +41,8 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & other_filters)
 async def gstart(_, message: Message):
-await AddUserToDatabase(bot, event)
-    FSub = await ForceSub(bot, event)
+await AddUserToDatabase(client, event)
+    FSub = await ForceSub(client, event)
     if FSub == 400:
         return
       await message.reply_text("""**✅ Saya telah online**""",
