@@ -20,7 +20,7 @@ async def force_sub(client: Client, event: Message):
         invite_link = await client.create_chat_invite_link(chat_id=(int(UPDATES_CHANNEL) if UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL))
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_ = await ForceSub(client, event)
+        fix_ = await force_sub(client, event)
         return fix_
     except Exception as err:
         print(f"Tidak dapat melakukan Paksa Berlangganan ke {UPDATES_CHANNEL}\n\nKesalahan: {err}\n\nHubungi Grup Dukungan: https://t.me/{group}")
@@ -55,7 +55,7 @@ async def force_sub(client: Client, event: Message):
         return 400
     except FloodWait as e:
         await asyncio.sleep(e.x)
-        fix_ = await ForceSub(client, event)
+        fix_ = await force_sub(client, event)
         return fix_
     except Exception as err:
         print(f"Ada yang Salah! Tidak dapat melakukan Langganan Paksa.\nKesalahan: {err}\n\nHubungi Grup Dukungan: https://t.me/{group}")
