@@ -41,7 +41,7 @@ async def start(_, message: Message):
 
 @Client.on_message(filters.command("start") & other_filters)
 async def gstart(_, message: Message):
-await AddUserToDatabase(client, event)
+    await AddUserToDatabase(client, event)
     FSub = await ForceSub(client, event)
     if FSub == 400:
         return
