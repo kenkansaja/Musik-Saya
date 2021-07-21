@@ -45,7 +45,7 @@ async def gstart(_, message: Message):
     FSub = await ForceSub(client, event)
     if FSub == 400:
         return
-      await message.reply_text("""**✅ Saya telah online**""",
+    await message.reply_text("""**✅ Saya telah online**""",
       reply_markup=InlineKeyboardMarkup(
                   [
                       [
