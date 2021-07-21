@@ -5,11 +5,8 @@ from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN, BO
 from helpers.filters import other_filters2, other_filters
 from helpers.forcesub import ForceSub
 
-@Client.on_message(other_filters2)
+@Client.on_message(other_filters2 & ForceSub)
 async def start(_, message: Message):
-    FSub = await ForceSub(client: Client, event: Message)
-    if FSub == 400:
-        return
     await message.reply_text(
         f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
 
