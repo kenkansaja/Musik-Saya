@@ -65,7 +65,7 @@ async def ghelp(_, message: Message):
 • /rs : Melanjutkan trek yang dijeda
 • /e : Menghentikan pemutaran media
       
-Semua Perintah Bisa Digunakan Kecuali Perintah /sk /ps /rs  /e Hanya Untuk Admin Grup
+Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs  /e Hanya Untuk Admin Grup
 """,
       reply_markup=InlineKeyboardMarkup(
                   [
