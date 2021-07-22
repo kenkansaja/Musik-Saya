@@ -27,7 +27,7 @@ HANYA BISA MEMUTAR LAGU LEWAT YOUTUBE DAN SONG
 - [X] /e : Menghentikan pemutaran media 
 - [X] /hp : Untuk menampilkan daftar bantuan di gc
 
-Semua Perintah Bisa Digunakan Kecuali Perintah /sk /ps /rs /e Hanya Untuk Admin Grup
+Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs /e Hanya Untuk Admin Grup
 
 # 💜 HEROKU
 
