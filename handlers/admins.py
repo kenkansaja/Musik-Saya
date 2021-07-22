@@ -56,8 +56,6 @@ async def stop(_, message: Message):
 
 
 @Client.on_message(command("sk") & other_filters)
-@errors
-@authorized_users_only
 async def skip(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
         await message.reply_text("❗ **Tidak ada lagu yang sedang diputar untuk diskip!**")
