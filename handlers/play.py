@@ -200,21 +200,23 @@ async def play(_, message: Message):
             url_suffix = results[0]["url_suffix"]
             views = results[0]["views"]
 
-        except Exception as e:
-        await lel.edit("**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas")
-        print(str(e))
-        return
-    try:    
-        secmul, dur, dur_arr = 1, 0, duration.split(":")
-        for i in range(len(dur_arr)-1, -1, -1):
-            dur += (int(dur_arr[i]) * secmul)
-            secmul *= 60
-        if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ **Lagu dengan durasi lebih dari `{DURATION_LIMIT}` menit tidak dapat diputar!**")
-             return
-    except:
-        pass
-        keyboard = InlineKeyboardMarkup(
+      except Exception as e:
+           await lel.edit("**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas")
+           print(str(e))
+           return
+     try:    
+          secmul, dur, dur_arr = 1, 0, duration.split(":")
+          for i in range(len(dur_arr)-1, -1, -1):
+             dur += (int(dur_arr[i]) * secmul)
+             secmul *= 60
+          if (dur / 60) > DURATION_LIMIT:
+               await lel.edit(f"❌ **Lagu dengan durasi lebih dari `{DURATION_LIMIT}` menit tidak dapat diputar!**")
+               return
+      except:
+         pass
+     durl = url
+     durl = durl.replace("youtube","youtubepp") 
+     keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
