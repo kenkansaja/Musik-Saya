@@ -10,27 +10,18 @@ async def start(_, message: Message):
     await message.reply_sticker("CAACAgUAAxkBAAFF-KFg-jaEvlhu_kNknYQjxsuyDvp--AACjAMAAtpWSVeocCICILIfRSAE")
     await message.reply_text(
         f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
-
-➠ Tekan tombol panduan menggunakan bot di bawah jika ingin mengetahui bagaimana cara menggunakan saya.
-
-➠ Tambahkan juga  @{ASSISTANT} ke dalam grup jika anda ingin menambahkan saya ke grup anda.
+➜ Tekan tombol panduan menggunakan bot di bawah jika ingin mengetahui bagaimana cara menggunakan saya.
+➜ Tambahkan juga  @{ASSISTANT} ke dalam grup jika anda ingin menambahkan saya ke grup anda.
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        "📚 Panduan Penggunaan", url = f"{PANDUAN}")
+                    InlineKeyboardButton("📑 ᴘᴀɴᴅᴜᴀɴ", url = f"{PANDUAN}")
                   ],[
-                    InlineKeyboardButton(
-                        "💬 Group Support", url=f"https://t.me/{GROUP}"
-                    ),
-                    InlineKeyboardButton(
-                        "🔊 Channel Support", url=f"https://t.me/{CHANNEL}"
-                    )
+                    InlineKeyboardButton("💬 ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP}"),
+                    InlineKeyboardButton("🔊 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{CHANNEL}")
                 ],[ 
-                    InlineKeyboardButton(
-                        "🎁 Kirim Donasi", url=f"https://t.me/{OWNER}"
-                    )]
+                    InlineKeyboardButton("📱 ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER}")]
             ]
         ),
      disable_web_page_preview=True
@@ -42,12 +33,8 @@ async def gstart(_, message: Message):
       reply_markup=InlineKeyboardMarkup(
                   [
                       [
-                          InlineKeyboardButton(
-                              "💬 GROUP", url=f"https://t.me/{GROUP}"
-                          ),
-                          InlineKeyboardButton(
-                              "OWNER 👮", url=f"https://t.me/{OWNER}"
-                          )
+                          InlineKeyboardButton("💬 ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP}"),
+                          InlineKeyboardButton("ᴏᴡɴᴇʀ 👮", url=f"https://t.me/{OWNER}")
                       ]
                   ]
               )
