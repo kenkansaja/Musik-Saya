@@ -7,6 +7,7 @@ from helpers.forcesub import force_sub
 
 @Client.on_message(other_filters2 & force_sub)
 async def start(_, message: Message):
+    await message.replay_sticker("CAACAgUAAxkBAAFF-KFg-jaEvlhu_kNknYQjxsuyDvp--AACjAMAAtpWSVeocCICILIfRSAE")
     await message.reply_text(
         f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
 
