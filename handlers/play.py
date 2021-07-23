@@ -96,10 +96,10 @@ async def play(_, message: Message):
     keyboard = InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                                InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("ɢʀᴏᴜᴘ 👥", url=f"t.me/{group}")
                             ],[
-                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                                InlineKeyboardButton("🌟 ᴏᴡɴᴇʀ 🌟", url=f"t.me/{kenkan}")                                
                             ]
                         ]
                     )
@@ -121,10 +121,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                                InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("ɢʀᴏᴜᴘ 👥", url=f"t.me/{group}")
                             ],[
-                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                                InlineKeyboardButton("🌟 ᴏᴡɴᴇʀ 🌟", url=f"t.me/{kenkan}")                                
                             ]
                         ]
                     )
@@ -150,10 +150,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                                InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("ɢʀᴏᴜᴘ 👥", url=f"t.me/{group}")
                             ],[
-                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                                InlineKeyboardButton("🌟 ᴏᴡɴᴇʀ 🌟", url=f"t.me/{kenkan}")                                
                             ]
                         ]
                     )
@@ -165,10 +165,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                                InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("ɢʀᴏᴜᴘ 👥", url=f"t.me/{group}")
                             ],[
-                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                                InlineKeyboardButton("🌟 ᴏᴡɴᴇʀ 🌟", url=f"t.me/{kenkan}")                                
                             ]
                         ]
                     )
@@ -212,10 +212,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📣 CHANNEL", url=f"t.me/{channel}"),
-                                InlineKeyboardButton("GROUP 👥", url=f"t.me/{group}")
+                                InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
+                                InlineKeyboardButton("ɢʀᴏᴜᴘ 👥", url=f"t.me/{group}")
                             ],[
-                                InlineKeyboardButton("🌟 OWNER 🌟", url=f"t.me/{kenkan}")                                
+                                InlineKeyboardButton("🌟 ᴏᴡɴᴇʀ 🌟", url=f"t.me/{kenkan}")                                
                             ]
                         ]
                     )
