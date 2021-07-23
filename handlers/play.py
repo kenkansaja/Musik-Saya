@@ -109,7 +109,6 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             await lel.edit(f"❌ Video dengan durasi lebih dari {DURATION_LIMIT} minute(s) tidak dapat dimainkan!")
-            return
         file_name = get_file_name(audio)
         title = file_name
         thumb_name = "https://telegra.ph/file/c9c7e24b03919fa5f8022.jpg"
@@ -200,12 +199,12 @@ async def play(_, message: Message):
             url_suffix = results[0]["url_suffix"]
             views = results[0]["views"]
 
-      except Exception as e:
-           await lel.edit("**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas")
-           print(str(e))
-           return
+        except Exception as e:
+            await lel.edit("**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas")
+            print(str(e))
+            return
 
-      keyboard = InlineKeyboardMarkup(
+        keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
