@@ -108,10 +108,8 @@ async def play(_, message: Message):
 
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
-            raise DurationLimitError(
-                f"❌ Video dengan durasi lebih dari {DURATION_LIMIT} minute(s) tidak dapat dimainkan!"
-            )
-
+            await lel.edit(f"❌ Video dengan durasi lebih dari {DURATION_LIMIT} minute(s) tidak dapat dimainkan!")
+            return
         file_name = get_file_name(audio)
         title = file_name
         thumb_name = "https://telegra.ph/file/c9c7e24b03919fa5f8022.jpg"
