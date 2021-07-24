@@ -3,9 +3,9 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN, BOT_NAME
 from helpers.filters import other_filters2, other_filters
-from helpers.forcesub import force_sub
 
-@Client.on_message(other_filters2 & force_sub)
+
+@Client.on_message(other_filters2)
 async def start(_, message: Message):
     await message.reply_sticker("CAACAgUAAxkBAAFF-KFg-jaEvlhu_kNknYQjxsuyDvp--AACjAMAAtpWSVeocCICILIfRSAE")
     await message.reply_text(
@@ -27,7 +27,7 @@ async def start(_, message: Message):
      disable_web_page_preview=True
     )
 
-@Client.on_message(filters.command("start") & other_filters & force_sub)
+@Client.on_message(filters.command("start") & other_filters)
 async def gstart(_, message: Message):
     await message.reply_text("""**✅ Saya telah online**""",
       reply_markup=InlineKeyboardMarkup(
@@ -40,7 +40,7 @@ async def gstart(_, message: Message):
               )
          )
 
-@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel & force_sub)
+@Client.on_message(filters.command("hp") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
       f"""
