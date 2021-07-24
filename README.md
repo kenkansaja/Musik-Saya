@@ -29,6 +29,8 @@ HANYA BISA MEMUTAR LAGU LEWAT YOUTUBE DAN SONG
 
 Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs /e Hanya Untuk Admin Grup
 
+Dahlah project gagal 
+
 # 💜 HEROKU
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/kenkansaja/Musik-Saya"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-aqua?style=plastic&logo=heroku&logoColor=aqua"width="320"height="50" /></a></p>
