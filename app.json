@@ -51,10 +51,6 @@
       "description": "Isi dengan link yang akan di jadikan sampul musik",
       "value": "https://telegra.ph/Panduan-07-20"
     },
-    "BG_IMAGE": {
-      "description": "Isi dengan fitur bot dalam format text yang kamu upload di telegra.ph",
-      "value": "https://telegra.ph/file/cbf170e5fb09b2a14cd51.png"
-    },
     "DURATION_LIMIT": {
       "description": "Isi dengan angka maksimal durasi yang bisa di putar ingat angka ini adalah (minutes).",
       "required": true,
