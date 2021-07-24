@@ -46,32 +46,6 @@ async def _human_time_duration(seconds):
 
 @Client.on_message(command("dn") & filters.user(SUDO_USERS) & ~filters.edited)
 def heroku_usage():
-    if HEROKU_API is None and HEROKU_APP_NAME is None:
-        return False, "You do not use heroku, bruh!"
-    useragent = grua()
-    user_id = Heroku.account().id
-    headers = {
-        "User-Agent": useragent,
-        "Authorization": f"Bearer {Var.HEROKU_API}",
-        "Accept": "application/vnd.heroku+json; version=3.account-quotas",
-    }
-    her_url = f"https://api.heroku.com/accounts/{user_id}/actions/get-quota"
-    r = requests.get(her_url, headers=headers)
-    if r.status_code != 200:
-        return (
-            True,
-            f"**ERROR**\n`{r.reason}`",
-        )
-    result = r.json()
-    quota = result["account_quota"]
-    quota_used = result["quota_used"]
-    remaining_quota = quota - quota_used
-    percentage = math.floor(remaining_quota / quota * 100)
-    minutes_remaining = remaining_quota / 60
-    hours = math.floor(minutes_remaining / 60)
-    minutes = math.floor(minutes_remaining % 60)
-    App = result["apps"]
-    try:
         App[0]["quota_used"]
     except IndexError:
         AppQuotaUsed = 0
