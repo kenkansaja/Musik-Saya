@@ -32,7 +32,7 @@
       "required": true
     },
     "SUDO_USERS": {
-      "description": "List of user IDs counted as admin everywhere (separated by space).",
+      "description": "Isi dengan id telegram orang yang bisa mengkontrol bot ini jika lebih dari satu pisahkan dengan spasi.",
       "required": true
     },
     "GROUP": {
@@ -52,7 +52,7 @@
       "value": "https://telegra.ph/Panduan-07-20"
     },
     "DURATION_LIMIT": {
-      "description": "Max audio duration limit for downloads (minutes).",
+      "description": "Isi dengan angka maksimal durasi yang bisa di putar ingat angka ini adalah (minutes).",
       "required": true,
       "value": "10"
     }
