@@ -52,6 +52,7 @@ async def ghelp(_, message: Message):
 • /ps : Jeda trek
 • /rs : Melanjutkan trek yang dijeda
 • /e : Menghentikan pemutaran media
+• /sc : Mencari judul lagu
       
 Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs  /e Hanya Untuk Admin Grup
 """,
