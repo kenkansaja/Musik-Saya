@@ -9,6 +9,7 @@ from helpers.decorators import errors, authorized_users_only
 from time import time
 from datetime import datetime
 from helpers.filters import command
+from pyrogram import Client, filters, emoji
 from pyrogram.types import Message
 from config import HEROKU_API, HEROKU_APP_NAME, SUDO_USERS
 
