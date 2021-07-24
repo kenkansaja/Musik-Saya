@@ -30,6 +30,3 @@ CHANNEL = getenv("CHANNEL", "musikkuchannel")
 OWNER = getenv("OWNER", "kenkanasw")
 
 PANDUAN = getenv("PANDUAN", "https://telegra.ph/Panduan-07-20")
-
-UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", None)
-  
