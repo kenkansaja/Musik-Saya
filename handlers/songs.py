@@ -68,8 +68,8 @@ def song(client, message):
     except Exception as e:
         print(e)
 
-@Client.on_message(filters.command(["vs", "video"]))
-async def ytmusic(client, message: Message):
+@Client.on_message(filters.command('vs') & ~filters.private & ~filters.channel)
+def vsong(client, message):
     global is_downloading
     if is_downloading:
         await message.reply_text(
