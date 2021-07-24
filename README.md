@@ -26,6 +26,8 @@ HANYA BISA MEMUTAR LAGU LEWAT YOUTUBE DAN SONG
 - [X] /rs : Melanjutkan trek yang dijeda
 - [X] /e : Menghentikan pemutaran media 
 - [X] /hp : Untuk menampilkan daftar bantuan di gc
+- [X] /sc : Untuk mencari lagu
+- [X] /gcast : Mengirim pesan global hanya berlaku untuk sudo user
 
 Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs /e Hanya Untuk Admin Grup
 
