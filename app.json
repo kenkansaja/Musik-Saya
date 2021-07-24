@@ -7,15 +7,15 @@
   "stack": "container",
   "env": {
     "SESSION_NAME": {
-      "description": "Pyrogram session string",
+      "description": "Pyrogram session string dapatkan di @Stringdurhakabot",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "A bot token from @BotFather",
+      "description": "Dapatkan di @BotFather",
       "required": true
     },
     "BOT_NAME": {
-      "description": "Your MusicPlayer Bot Name.",
+      "description": "Isi dengan nama bot kamu.",
       "required": false,
       "value": ""
     },        
@@ -24,11 +24,11 @@
       "value": ""
     },
     "API_ID": {
-      "description": "App ID from my.telegram.org/apps",
+      "description": "App ID dapatkan di my.telegram.org/apps atau di @kenkanrobot",
       "required": true
     },
     "API_HASH": {
-      "description": "App hash from my.telegram.org/apps",
+      "description": "App ID dapatkan di my.telegram.org/apps atau di @kenkanrobot",
       "required": true
     },
     "SUDO_USERS": {
@@ -48,6 +48,10 @@
       "value": "kenkanasw"
     },
     "PANDUAN": {
+      "description": "Isi dengan link yang akan di jadikan sampul musik",
+      "value": "https://telegra.ph/Panduan-07-20"
+    },
+    "BG_IMAGE": {
       "description": "Isi dengan fitur bot dalam format text yang kamu upload di telegra.ph",
       "value": "https://telegra.ph/Panduan-07-20"
     },
