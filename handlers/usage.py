@@ -9,7 +9,7 @@ from helpers.decorators import errors, authorized_users_only
 
 from config import (
     HEROKU_APP_NAME,
-    HEROKU_API_KEY, SUDO_USERS, BOT_USERNAME)
+    HEROKU_API_KEY, SUDO_USERS)
 from pyrogram import Client, filters, emoji
 
 heroku_api = "https://api.heroku.com"
