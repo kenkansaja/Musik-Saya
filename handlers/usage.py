@@ -10,19 +10,17 @@ from time import time
 from datetime import datetime
 from helpers.filters import command
 from pyrogram.types import Message
+from config import HEROKU_API, HEROKU_APP_NAME, SUDO_USERS
 
-from config import (
-    HEROKU_APP_NAME,
-    HEROKU_API_KEY, SUDO_USERS)
-from pyrogram import Client, filters, emoji
-
-heroku_api = "https://api.heroku.com"
-if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
-    Heroku = heroku3.from_key(HEROKU_API_KEY)
-    app = Heroku.app(HEROKU_APP_NAME)
-    heroku_var = app.config()
-else:
-    app = None
+try:
+    if Var.HEROKU_API and Var.HEROKU_APP_NAME:
+        HEROKU_API = Var.HEROKU_API
+        HEROKU_APP_NAME = Var.HEROKU_APP_NAME
+        Heroku = heroku3.from_key(Var.HEROKU_API)
+        app = Heroku.app(Var.HEROKU_APP_NAME)
+except BaseException:
+    HEROKU_API = None
+    HEROKU_APP_NAME = None
 
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
@@ -46,73 +44,68 @@ async def _human_time_duration(seconds):
 
 
 @Client.on_message(command("dn") & filters.user(SUDO_USERS) & ~filters.edited)
-async def dyno_usage(dyno):
-    """
-        Get your account Dyno Usage
-    """
-    await dyno.edit("`Mendapatkan Informasi Dyno Heroku Anda ヅ`")
-    useragent = (
-        'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
-        'AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/81.0.4044.117 Mobile Safari/537.36'
-    )
+def heroku_usage():
+    if HEROKU_API is None and HEROKU_APP_NAME is None:
+        return False, "You do not use heroku, bruh!"
+    useragent = grua()
     user_id = Heroku.account().id
     headers = {
-        'User-Agent': useragent,
-        'Authorization': f'Bearer {HEROKU_API_KEY}',
-        'Accept': 'application/vnd.heroku+json; version=3.account-quotas',
+        "User-Agent": useragent,
+        "Authorization": f"Bearer {Var.HEROKU_API}",
+        "Accept": "application/vnd.heroku+json; version=3.account-quotas",
     }
-    path = "/accounts/" + user_id + "/actions/get-quota"
-    async with aiohttp.ClientSession() as session:
-        async with session.get(heroku_api + path, headers=headers) as r:
-            if r.status != 200:
-                await dyno.client.send_message(
-                    dyno.chat_id,
-                    f"`{r.reason}`",
-                    reply_to=dyno.id
-                )
-                await dyno.edit("`Tidak Bisa Mendapatkan Informasi Dyno ヅ`")
-                return False
-            result = await r.json()
-            quota = result['account_quota']
-            quota_used = result['quota_used']
-
-            """ - User Quota Limit and Used - """
-            remaining_quota = quota - quota_used
-            percentage = math.floor(remaining_quota / quota * 100)
-            minutes_remaining = remaining_quota / 60
-            hours = math.floor(minutes_remaining / 60)
-            minutes = math.floor(minutes_remaining % 60)
-
-            """ - User App Used Quota - """
-            Apps = result['apps']
-            for apps in Apps:
-                if apps.get('app_uuid') == app.id:
-                    AppQuotaUsed = apps.get('quota_used') / 60
-                    AppPercentage = math.floor(
-                        apps.get('quota_used') * 100 / quota)
-                    break
-            else:
-                AppQuotaUsed = 0
-                AppPercentage = 0
-
-            AppHours = math.floor(AppQuotaUsed / 60)
-            AppMinutes = math.floor(AppQuotaUsed % 60)
-
-            await dyno.edit(
-                "┏━━━━━━༻❁༺━━━━━━┓\nＩＮＦＯＲＭＡＳＩ　ＤＹＮＯ\n┗━━━━━━༻❁༺━━━━━━┛\n\n╭━┯━━━━━━━━━━━━━━┯━╮\n"
-                f"✸ **Penggunaan Dyno {app.name} :**\n"
-                f"❉ **{AppHours} Jam - "
-                f"{AppMinutes} Menit  -  {AppPercentage}%**\n"
-                "✲━─━─━─━─━─━─━─━─━✲\n"
-                "✸ **Sisa Dyno Bulan Ini :**\n"
-                f"❉ **{hours} Jam - {minutes} Menit  "
-                f"-  {percentage}%**\n"
-                "╰━┷━━━━━━━━━━━━━━┷━╯"
-            )
-            await asyncio.sleep(20)
-            await event.delete()
-            return True
+    her_url = f"https://api.heroku.com/accounts/{user_id}/actions/get-quota"
+    r = requests.get(her_url, headers=headers)
+    if r.status_code != 200:
+        return (
+            True,
+            f"**ERROR**\n`{r.reason}`",
+        )
+    result = r.json()
+    quota = result["account_quota"]
+    quota_used = result["quota_used"]
+    remaining_quota = quota - quota_used
+    percentage = math.floor(remaining_quota / quota * 100)
+    minutes_remaining = remaining_quota / 60
+    hours = math.floor(minutes_remaining / 60)
+    minutes = math.floor(minutes_remaining % 60)
+    App = result["apps"]
+    try:
+        App[0]["quota_used"]
+    except IndexError:
+        AppQuotaUsed = 0
+        AppPercentage = 0
+    else:
+        AppQuotaUsed = App[0]["quota_used"] / 60
+        AppPercentage = math.floor(App[0]["quota_used"] * 100 / quota)
+    AppHours = math.floor(AppQuotaUsed / 60)
+    AppMinutes = math.floor(AppQuotaUsed % 60)
+    total, used, free = shutil.disk_usage(".")
+    cpuUsage = psutil.cpu_percent()
+    memory = psutil.virtual_memory().percent
+    disk = psutil.disk_usage("/").percent
+    upload = humanbytes(psutil.net_io_counters().bytes_sent)
+    down = humanbytes(psutil.net_io_counters().bytes_recv)
+    TOTAL = humanbytes(total)
+    USED = humanbytes(used)
+    FREE = humanbytes(free)
+    return True, get_string("usage").format(
+        Var.HEROKU_APP_NAME,
+        AppHours,
+        AppMinutes,
+        AppPercentage,
+        hours,
+        minutes,
+        percentage,
+        TOTAL,
+        USED,
+        FREE,
+        upload,
+        down,
+        cpuUsage,
+        memory,
+        disk,
+    )
 
 @Client.on_message(command("pn") & ~filters.edited)
 @authorized_users_only
