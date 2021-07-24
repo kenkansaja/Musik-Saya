@@ -45,37 +45,33 @@ async def _human_time_duration(seconds):
 
 
 @Client.on_message(command("dn") & filters.user(SUDO_USERS) & ~filters.edited)
-def heroku_usage():
-    AppQuotaUsed = App[0]["quota_used"] / 60
-    AppPercentage = math.floor(App[0]["quota_used"] * 100 / quota)
-    AppHours = math.floor(AppQuotaUsed / 60)
-    AppMinutes = math.floor(AppQuotaUsed % 60)
-    total, used, free = shutil.disk_usage(".")
-    cpuUsage = psutil.cpu_percent()
-    memory = psutil.virtual_memory().percent
-    disk = psutil.disk_usage("/").percent
-    upload = humanbytes(psutil.net_io_counters().bytes_sent)
-    down = humanbytes(psutil.net_io_counters().bytes_recv)
-    TOTAL = humanbytes(total)
-    USED = humanbytes(used)
-    FREE = humanbytes(free)
-    return True, get_string("usage").format(
-        Var.HEROKU_APP_NAME,
-        AppHours,
-        AppMinutes,
-        AppPercentage,
-        hours,
-        minutes,
-        percentage,
-        TOTAL,
-        USED,
-        FREE,
-        upload,
-        down,
-        cpuUsage,
-        memory,
-        disk,
-    )
+async def dyno_usage(dyno):
+    await dyno.edit("`Mendapatkan Informasi Dyno Heroku`")
+    for apps in Apps:
+        if apps.get('app_uuid') == app.id:
+            AppQuotaUsed = apps.get('quota_used') / 60
+            AppPercentage = math.floor(
+                apps.get('quota_used') * 100 / quota)
+            break
+        else:
+            AppQuotaUsed = 0
+            AppPercentage = 0
+
+            AppHours = math.floor(AppQuotaUsed / 60)
+            AppMinutes = math.floor(AppQuotaUsed % 60)
+
+            await dyno.edit(
+                "┏━━━━━━༻❁༺━━━━━━┓\nＩＮＦＯＲＭＡＳＩ　ＤＹＮＯ\n┗━━━━━━༻❁༺━━━━━━┛\n\n╭━┯━━━━━━━━━━━━━━┯━╮\n"
+                f"✸ **Penggunaan Dyno {app.name} :**\n"
+                f"❉ **{AppHours} Jam - "
+                f"{AppMinutes} Menit  -  {AppPercentage}%**\n"
+                "✲━─━─━─━─━─━─━─━─━✲\n"
+                "✸ **Sisa Dyno Bulan Ini :**\n"
+                f"❉ **{hours} Jam - {minutes} Menit  "
+                f"-  {percentage}%**\n"
+                "╰━┷━━━━━━━━━━━━━━┷━╯"
+            )
+              
 
 @Client.on_message(command("pn") & ~filters.edited)
 @authorized_users_only
