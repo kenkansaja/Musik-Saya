@@ -31,4 +31,4 @@ OWNER = getenv("OWNER", "kenkanasw")
 
 PANDUAN = getenv("PANDUAN", "https://telegra.ph/Panduan-07-20")
 
-BG_IMAGE = getenv("BG_IMAGE", "")
+BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/cbf170e5fb09b2a14cd51.png")
