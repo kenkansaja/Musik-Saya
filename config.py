@@ -30,3 +30,5 @@ CHANNEL = getenv("CHANNEL", "musikkuchannel")
 OWNER = getenv("OWNER", "kenkanasw")
 
 PANDUAN = getenv("PANDUAN", "https://telegra.ph/Panduan-07-20")
+
+BG_IMAGE = getenv("BG_IMAGE", "")
