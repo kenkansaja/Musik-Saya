@@ -10,9 +10,9 @@ async def start(_, message: Message):
     await message.reply_sticker("CAACAgUAAxkBAAFF-KFg-jaEvlhu_kNknYQjxsuyDvp--AACjAMAAtpWSVeocCICILIfRSAE")
     await message.reply_photo(
        photo = f"{START_IMAGE}",
-       caption = f"Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
+       caption = f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
 ➜ Tekan tombol panduan menggunakan bot di bawah jika ingin mengetahui bagaimana cara menggunakan saya.
-➜ Tambahkan juga  @{ASSISTANT} ke dalam grup jika anda ingin menambahkan saya ke grup anda.",
+➜ Tambahkan juga  @{ASSISTANT} ke dalam grup jika anda ingin menambahkan saya ke grup anda.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
