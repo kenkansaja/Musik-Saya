@@ -39,6 +39,11 @@
       "description": "Isi dengan fitur bot dalam format text yang kamu upload di telegra.ph",
       "value": "https://telegra.ph/file/7dfd80f33fca97cc14b75.png"
     },
+    "START_IMAGE": {
+      "description": "Isi dengan link foto kalau gak ada kosongin aja",
+      "required": false,
+      "value": ""
+    },
     "GROUP": {
       "description": "Isi dengan username group kalian tanpa tanda @",
       "value": "musikkugroup"
