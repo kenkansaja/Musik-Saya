@@ -13,6 +13,7 @@ async def start(_, message: Message):
        caption = f"""Hai 👋, Saya adalah {BOT_NAME} saya dapat memutar lagu di voice chat group anda.
 ➜ Tekan tombol panduan menggunakan bot di bawah jika ingin mengetahui bagaimana cara menggunakan saya.
 ➜ Tambahkan juga  @{ASSISTANT} ke dalam grup jika anda ingin menambahkan saya ke grup anda.""",
+       disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
