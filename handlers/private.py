@@ -23,8 +23,7 @@ async def start(_, message: Message):
                 ],[ 
                     InlineKeyboardButton("📱 ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER}")]
             ]
-        ),
-     disable_web_page_preview=True
+        )
     )
 
 @Client.on_message(filters.command(["start", "reload", "admincache"]) & other_filters)
