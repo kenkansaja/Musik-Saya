@@ -70,13 +70,6 @@ Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs  /e Hanya Untuk Admin Gru
 @Client.on_message(filters.command("admincache") & filters.group & ~ filters.edited)
 @authorized_users_only
 async def admincache(client, message: Message):
-    set(
-        message.chat.id,
-        [
-            member.user
-            for member in await message.chat.get_members(filter="administrators")
-        ],
-    )
     await message.reply_photo(
       photo=f"{START_IMAGE}",
       caption="✅ **Bot berhasil dimulai ulang!**\n\n **Daftar admin telah diperbarui**",
