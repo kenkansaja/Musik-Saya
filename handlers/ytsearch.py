@@ -32,7 +32,7 @@ async def ytsearch(_, message: Message):
             text += f"──────── ⋆⋅☆⋅⋆ ────────\nᴅᴜʀᴀꜱɪ - {results[i]['duration']}\n"
             text += f"──────── ⋆⋅☆⋅⋆ ────────\nᴘᴇɴᴏɴᴛᴏɴ - {results[i]['views']}\n"
             text += f"──────── ⋆⋅☆⋅⋆ ────────\nᴄʜᴀɴɴᴇʟ - {results[i]['channel']}\n\n"
-            text += f"──────── ⋆⋅☆⋅⋆ ────────n\`https://youtube.com{results[i]['url_suffix']}`\n"
+            text += f"──────── ⋆⋅☆⋅⋆ ────────\n`https://youtube.com{results[i]['url_suffix']}`\n"
             text += f"════════════════════\n\n"
             i += 1      
         await m.edit(text, disable_web_page_preview=True)
