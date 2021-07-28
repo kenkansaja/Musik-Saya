@@ -26,7 +26,7 @@ async def start(_, message: Message):
         )
     )
 
-@Client.on_message(filters.command(["start", "reload", "admincache"]) & other_filters)
+@Client.on_message(filters.command(["start", "reload"]) & other_filters)
 async def gstart(_, message: Message):
     await message.reply_photo(
       photo = f"{START_IMAGE}",
