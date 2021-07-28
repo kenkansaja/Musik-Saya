@@ -217,9 +217,6 @@ async def play(_, message: Message):
                             ]
                         ]
                     )
-        if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
-             return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(youtube.download(url))
