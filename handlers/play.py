@@ -169,7 +169,7 @@ async def play(_, message: Message):
                             ]
                         ]
                     )
-        if (audio.duration / 60) > DURATION_LIMIT:
+        if (dur / 60) > DURATION_LIMIT:
              await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
              return
         requested_by = message.from_user.first_name
