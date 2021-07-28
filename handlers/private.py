@@ -3,6 +3,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn, CHANNEL, GROUP, ASSISTANT, OWNER, PANDUAN, BOT_NAME, START_IMAGE
 from helpers.filters import other_filters2, other_filters
+from helpers.decorators import authorized_users_only
 
 
 @Client.on_message(other_filters2)
@@ -65,3 +66,30 @@ Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs  /e Hanya Untuk Admin Gru
                 ]
         )
     )        
+
+@Client.on_message(filters.command("admincache") & filters.group & ~ filters.edited)
+@authorized_users_only
+async def admincache(client, message: Message):
+    set(
+        message.chat.id,
+        [
+            member.user
+            for member in await message.chat.get_members(filter="administrators")
+        ],
+    )
+    await message.reply_photo(
+      photo=f"{START_IMAGE}",
+      caption="✅ **Bot berhasil dimulai ulang!**\n\n **Daftar admin telah diperbarui**",
+      reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "💬 GROUP", url=f"https://t.me/{GROUP}"
+                    ),
+                    InlineKeyboardButton(
+                        "OWNER 👮", url=f"https://t.me/{OWNER}"
+                    )
+                ]
+            ]
+        )
+   )
