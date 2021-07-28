@@ -206,8 +206,19 @@ async def play(_, message: Message):
             await lel.edit("**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas")
             print(str(e))
             return
-
-        keyboard = InlineKeyboardMarkup(
+       try:    
+          secmul, dur, dur_arr = 1, 0, duration.split(":")
+          for i in range(len(dur_arr)-1, -1, -1):
+              dur += (int(dur_arr[i]) * secmul)
+              secmul *= 60
+          if (dur / 60) > DURATION_LIMIT:
+               await lel.edit(f"❌ **Lagu dengan durasi lebih dari `{DURATION_LIMIT}` menit tidak dapat diputar!**")
+               return
+      except:
+          pass
+      durl = url
+      durl = durl.replace("youtube","youtubepp")
+      keyboard = InlineKeyboardMarkup(
                         [
                             [
                                 InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"t.me/{channel}"),
@@ -217,9 +228,6 @@ async def play(_, message: Message):
                             ]
                         ]
                     )
-        if (audio.duration / 60) > DURATION_LIMIT:
-             await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
-             return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(youtube.download(url))
