@@ -108,7 +108,7 @@ async def play(_, message: Message):
 
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
-            await lel.edit(f"❌ Video dengan durasi lebih dari {DURATION_LIMIT} minute(s) tidak dapat dimainkan!")
+           raise DurationLimitError(f"❌ Video dengan durasi lebih dari {DURATION_LIMIT} minute(s) tidak dapat dimainkan!")
         file_name = get_file_name(audio)
         title = file_name
         thumb_name = "https://telegra.ph/file/c9c7e24b03919fa5f8022.jpg"
@@ -169,6 +169,9 @@ async def play(_, message: Message):
                             ]
                         ]
                     )
+        if (dur / 60) > DURATION_LIMIT:
+             await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
+             return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
@@ -214,6 +217,9 @@ async def play(_, message: Message):
                             ]
                         ]
                     )
+        if (dur / 60) > DURATION_LIMIT:
+             await lel.edit(f"❌ Video lebih dari {DURATION_LIMIT} menit tidak dapat diputar!")
+             return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
         file_path = await converter.convert(youtube.download(url))
