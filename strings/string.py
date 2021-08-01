@@ -1,7 +1,7 @@
 import yaml
 import os
 from string import Formatter
-from config import LANG
+from config import LANG, COMMAND_PREFIXES as PREFIX
 
 RTL_LANGS = ["ckb", "he"]
 PREFIX = "" if LANG not in RTL_LANGS else "\u200f"
