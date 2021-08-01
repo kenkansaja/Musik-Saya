@@ -30,7 +30,8 @@ HANYA BISA MEMUTAR LAGU LEWAT YOUTUBE DAN SONG
 - [X] /gcast : Mengirim pesan global hanya berlaku untuk sudo user
 - [X] /up : Untuk mengecek waktu online bot
 - [X] /pn : Mengecek ping bot
-Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs /e Hanya Untuk Admin Grup
+
+- Semua Perintah Bisa Digunakan Kecuali Perintah /ps /rs /e Hanya Untuk Admin Grup
 
 Dahlah project gagal 
 
