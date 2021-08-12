@@ -39,6 +39,10 @@ Dahlah project gagal
 
 <p align="center"><a href="https://heroku.com/deploy?template=https://github.com/kenkansaja/Musik-Saya"><img src="https://img.shields.io/badge/BUAT DI-HEROKU-aqua?style=plastic&logo=heroku&logoColor=aqua"width="320"height="50" /></a></p>
 
+## DEPLOY RAILWAY
+
+[![Deploy Ke Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/kenkansaja/Musik-Saya&envs=SESSION_NAME,BOT_TOKEN,BOT_NAME,API_ID,API_HASH,DURATION_LIMIT,SUDO_USERS,ASSISTANT,OWNER,GROUP,CHANNEL,OWNER)
+
 # VIA REPLIT
 Klik tombol dibawah untuk mengambil Pyrogram String Session Atau pilih p bukan t
 
